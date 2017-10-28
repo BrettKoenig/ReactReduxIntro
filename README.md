@@ -17,9 +17,9 @@ Notes from: https://egghead.io/courses/getting-started-with-redux
 
         4. If reducer function is passed an action which it does not understand it should return the current state of the application
 
-        5. Example reducer function:                               ![image alt text](images/image_0.png =300x)![image alt text](images/image_1.png =300x)
+        5. Example reducer function:                               <img src="images/image_0.png" alt="Drawing" style="width: 300px;"/><img src="images/image_1.png" alt="Drawing" style="width: 300px;"/>
 
-2. The store binds together the three principles of redux ([see how to import redux](https://egghead.io/lessons/react-redux-store-methods-getstate-dispatch-and-subscribe)): holds the current application’s state object, lets you dispatch actions, when you create it need to specify the reducer. The store has three functions: getState() which returns the current state, dispatch() lets you dispatch actions to change state of action, subscribe() lets you register a callback that redux store will call any time an action has been dispatched so you can update UI to reflect current state. First working redux app:![image alt text](images/image_2.png =300x)
+2. The store binds together the three principles of redux ([see how to import redux](https://egghead.io/lessons/react-redux-store-methods-getstate-dispatch-and-subscribe)): holds the current application’s state object, lets you dispatch actions, when you create it need to specify the reducer. The store has three functions: getState() which returns the current state, dispatch() lets you dispatch actions to change state of action, subscribe() lets you register a callback that redux store will call any time an action has been dispatched so you can update UI to reflect current state. First working redux app:<img src="images/image_2.png" alt="Drawing" style="width: 300px;"/>
 
 in the above, the render is called after each time the store is updated. render() is called once to insert the initial state to innertext on load.
 
