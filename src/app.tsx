@@ -1,6 +1,10 @@
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { createStore } from 'redux';
+
 //Reducer - specifies how next state is calculated 
 //based on current state and action being dispatched
-const counter = (state = 0, action) => {
+const counter = (state = 0, action: any) => {
     switch (action.type){
         case 'INCREMENT':
         return state + 1;
@@ -26,11 +30,10 @@ const Counter = ({
     </div>
 );
 
-const { createStore } = Redux;
 const store = createStore(counter);
 
 const render = () => {
-    ReactDOM.render(
+	    ReactDOM.render(
         //when we render a counter we specify values should be taken from Redux current state, 
         //when user clicks button we dispatch corresponding action
         <Counter value={store.getState()}
@@ -44,10 +47,10 @@ const render = () => {
                 type:'DECREMENT'
             })
         }
-        />
+        />, 
         document.getElementById('root')
     );
 };
-//subscribe to redux store so render function runs any time state changes so counter gets current state
+
 store.subscribe(render);
 render();

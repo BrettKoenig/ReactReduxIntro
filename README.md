@@ -1,5 +1,6 @@
 # ReactReduxIntro
 Notes from: https://egghead.io/courses/getting-started-with-redux
+To start: clone, cd into dir, npm install, npm run build
 
 1. Three Principles of Redux
 

@@ -1,0 +1,34 @@
+{
+  "name": "ReactReduxIntro",
+  "version": "1.0.0",
+  "description": "Notes from: https://egghead.io/courses/getting-started-with-redux, webpack set up with instructions from https://medium.com/@fay_jai/getting-started-with-reactjs-typescript-and-webpack-95dcaa0ed33c",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrettKoenig/ReactReduxIntro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrettKoenig/ReactReduxIntro/issues"
+  },
+  "homepage": "https://github.com/BrettKoenig/ReactReduxIntro#readme",
+  "devDependencies": {
+    "redux-devtools": "^3.4.0",
+    "ts-loader": "^3.1.0",
+    "typescript": "^2.5.3",
+    "typings": "^2.1.1",
+    "webpack": "^2.7.0"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
+}
