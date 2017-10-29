@@ -1,6 +1,7 @@
 # ReactReduxIntro
 Notes from: https://egghead.io/courses/getting-started-with-redux
-To start: clone, cd into dir, npm install, npm run build
+To start: clone, cd into dir, npm install, npm run build, or npm run dev
+-skipped video 9 (implementation of expect/deep freeze libraries)
 
 1. Three Principles of Redux
 
@@ -23,5 +24,9 @@ To start: clone, cd into dir, npm install, npm run build
 2. The store binds together the three principles of redux ([see how to import redux](https://egghead.io/lessons/react-redux-store-methods-getstate-dispatch-and-subscribe)): holds the current application’s state object, lets you dispatch actions, when you create it need to specify the reducer. The store has three functions: getState() which returns the current state, dispatch() lets you dispatch actions to change state of action, subscribe() lets you register a callback that redux store will call any time an action has been dispatched so you can update UI to reflect current state. First working redux app:<img src="images/image_2.png" alt="Drawing" width="300" />
 
 in the above, the render is called after each time the store is updated. render() is called once to insert the initial state to innertext on load.
+
+3. Mutations are not allowed in Redux.... From https://github.com/tastejs/todomvc/tree/gh-pages/examples/typescript-react: "Note: It's usually better to use immutable data structures since they're easier to reason about and React works very well with them. Use map(), filter() and reduce() everywhere instead of mutating the array or items themselves."
+	-For objects use Object.assign() and ...spread
+	-For arrays use concate(), slice(), and ...spread
 
 
