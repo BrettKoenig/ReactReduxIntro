@@ -2,29 +2,35 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { createStore } from 'redux';
 
-//Reducer - specifies how next state is calculated 
-//based on current state and action being dispatched
+const todo = (state, action) => {
+    switch (action.type) {
+        case 'ADD_TODO':
+            return {
+                id: action.id,
+                text: action.text,
+                completed: false
+            };
+        case 'TOGGLE_TODO':
+            if (state.id !== action.id) {
+                return state;
+            }
+            return {
+                ...state,
+                completed: !state.completed
+            };
+        default:
+            return state;
+    }
+}
 const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return [
                 ...state,
-                {
-                    id: action.id,
-                    text: action.text,
-                    completed: false
-                }
+                todo(undefined, action)
             ];
-            case 'TOGGLE_TODO':
-            return state.map(todo => {
-                if(todo.id !== action.id){
-                    return todo;
-                }
-                return {
-                    ...todo,
-                    completed: !todo.completed
-                };
-            });
+        case 'TOGGLE_TODO':
+            return state.map(t => todo(t, action));
         default:
             return state;
     }
@@ -54,14 +60,14 @@ const testAddTodo = () => {
 const testToggleTodo = () => {
     const stateBefore = [
         {
-            id:0,
+            id: 0,
             text: 'Learn Redux',
-            completed:false
+            completed: false
         },
         {
-            id:1,
+            id: 1,
             text: 'Go shopping',
-            completed:false
+            completed: false
         },
     ];
     const action = {
@@ -70,14 +76,14 @@ const testToggleTodo = () => {
     };
     const stateAfter = [
         {
-            id:0,
+            id: 0,
             text: 'Learn Redux',
-            completed:false
+            completed: false
         },
         {
-            id:1,
+            id: 1,
             text: 'Go shopping',
-            completed:true
+            completed: true
         },
     ];
 
