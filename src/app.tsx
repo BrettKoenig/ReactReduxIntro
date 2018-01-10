@@ -48,11 +48,25 @@ const visibilityFilter = (
             return state;
     }
 }
-const { combineReducers } = Redux;
-const todoApp = combineReducers({
-    todos,
-    visibilityFilter
-});
+const combineReducers = (reducers) => {
+    return (state = {}, action) => {
+        return Object.keys(reducers).reduce(
+            (nextState, key) => {
+                nextState[key] = reducers[key](
+                    state[key],
+                    action
+                );
+                return nextState;
+            },
+            {}
+        );
+    };
+};
+// const { combineReducers } = Redux;
+// const todoApp = combineReducers({
+//     todos,
+//     visibilityFilter
+// });
 // const todoApp = (state = {}, action) => {
 //     return {
 //         todos: todos(
